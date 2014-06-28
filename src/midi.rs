@@ -170,6 +170,7 @@ pub type C_PmDeviceID = i32;
 pub type PmDeviceID = int;
 pub static pmNoDevice :i32 = -1;
 
+#[deriving(Show)]
 pub struct PmDeviceInfo {
     structVersion: int, /* < this internal structure version */ 
     interf : String, /* < underlying MIDI API, e.g. MMSystem or DirectX */
