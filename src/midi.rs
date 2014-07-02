@@ -7,7 +7,7 @@ use std::{ptr, str};
 use core::mem::transmute;
 use libc::c_char;
 
-#[deriving(PartialEq, Eq, FromPrimitive)]
+#[deriving(PartialEq, Eq, FromPrimitive, Show)]
 pub enum PmError {
     PmNoError = ffi::PmNoError as int,
     PmGotData = ffi::PmGotData as int, /* < A "no error" return that also indicates data available */
@@ -399,7 +399,7 @@ impl PmMessage {
    non-decreasing.
  */
 #[allow(visible_private_types)]
-#[deriving(Clone, PartialEq, Eq, Decodable, Encodable)]
+#[deriving(Clone, PartialEq, Eq, Decodable, Encodable, Show)]
 pub  struct PmEvent {
     pub message : PmMessage,
     pub timestamp : ffi::C_PmTimestamp,
